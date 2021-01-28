@@ -42,7 +42,7 @@ const HomeScreen=props=>{
 
     return(
         <View style={{flex:1,paddingHorizontal:10,paddingVertical:5}}>
-            <FlatList data={dataState}
+            <FlatList data={dataState.todos}
              keyExtractor={(items,index)=>index.toString()}   
             renderItem={(items)=>{
                 return(
