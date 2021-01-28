@@ -40,6 +40,11 @@ const HomeScreen=props=>{
     })
    }
 
+   const thunkBtnClickHandler=()=>{
+    console.log("Hello  :",props.navigation)
+    props.navigation.navigate('Thunk')
+}
+
     return(
         <View style={{flex:1,paddingHorizontal:10,paddingVertical:5}}>
             <FlatList data={dataState.todos}
@@ -62,15 +67,25 @@ const HomeScreen=props=>{
                     onChangeText={changeNameTextHandler}
                     style={{borderRadius:30,borderWidth:0.5,paddingHorizontal:10,fontSize:18}}
                 />
-                <View style={{width:'100%',flexDirection:'row',justifyContent:'center'}}>
+            <View style={{width:'100%',alignItems:'center'}}>
                 <TouchableOpacity 
-             activeOpacity={0.6} 
-             onPress={addClickHandler}
-             style={{width:'30%',alignItems:'center',borderRadius:30,
-             marginTop:10,
-             paddingHorizontal:10,paddingVertical:5,backgroundColor:'blue'}}>
-            <Text style={{fontSize:18,fontWeight:'bold',color:'#fff'}}>Add</Text>
-            </TouchableOpacity>
+                activeOpacity={0.6} 
+                onPress={addClickHandler}
+                style={{width:'30%',alignItems:'center',borderRadius:30,
+                marginTop:10,
+                paddingHorizontal:10,paddingVertical:5,backgroundColor:'blue'}}>
+                    <Text style={{fontSize:18,fontWeight:'bold',color:'#fff'}}>Add</Text>
+                </TouchableOpacity>
+            </View>
+            <View style={{width:'100%',flexDirection:'column',alignItems:'center',}}>
+                <TouchableOpacity 
+                activeOpacity={0.6} 
+                onPress={thunkBtnClickHandler}
+                style={{alignItems:'center',borderRadius:30,
+                marginTop:10,
+                paddingHorizontal:15,paddingVertical:10,backgroundColor:'blue'}}>
+                    <Text style={{fontSize:18,fontWeight:'bold',color:'#fff'}}>Example of Thunk</Text>
+                </TouchableOpacity>
             </View>
         </View>
         </View>

@@ -22,7 +22,7 @@ const dataReducer=(state=intialState,action)=>{
                 ...state,
                 todos:deletedState
             };
-    }
+    }                               
     return state;
 }
 
